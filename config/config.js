@@ -19,6 +19,7 @@ module.exports = {
     "protocol": 'postgres',
     "dialectOptions": {
       ssl: {
+        require: true,
         rejectUnauthorized: false
       }
     }
@@ -39,6 +40,7 @@ module.exports = {
     "protocol": 'postgres',
     "dialectOptions": {
       ssl: {
+        require: true,
         rejectUnauthorized: false
       }
     }

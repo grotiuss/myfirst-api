@@ -24,6 +24,7 @@ module.exports = {
       }
     }
   },
+
   "test": {
     "username": DB_USERNAME,
     "password": DB_PASSWORD,
@@ -31,22 +32,18 @@ module.exports = {
     "host": DB_HOST,
     "dialect": "postgres"
   },
-  // "production": {
-  //   "username": DB_USERNAME,
-  //   "password": DB_PASSWORD,
-  //   "database": DB_DATABASE,
-  //   "host": DB_HOST,
-  //   "dialect": "postgres",
-  //   "protocol": 'postgres',
-  //   "dialectOptions": {
-  //     ssl: {
-  //       require: true,
-  //       rejectUnauthorized: false
-  //     }
-  //   }
-  // }
   "production": {
-    "use_env_variabele": "postgres://vbfdadcnwylqws:2300de92083794989e457babf723d7a7361137cc069676d04e146fec6a3ec402@ec2-54-157-160-218.compute-1.amazonaws.com:5432/d6hojamm62k60k",
+    "username": process.env.PG_USER,
+    "password": process.env.PG_PASSWORD,
+    "database": process.env.PG_DATABASE,
+    "host": process.env.PG_HOST,
     "dialect": "postgres",
+    "protocol": 'postgres',
+    // "dialectOptions": {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false
+    //   }
+    // }
   }
 };

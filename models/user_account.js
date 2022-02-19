@@ -6,9 +6,6 @@ const {
 //For password encryption
 const bcrypt = require('bcrypt')
 
-//For raw query
-const { QueryTypes } = require('sequelize')
-
 module.exports = (sequelize, DataTypes) => {
   class User_account extends Model {
     /**

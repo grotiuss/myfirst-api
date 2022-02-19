@@ -40,7 +40,12 @@ module.exports = {
             await User_account.authenticate(input)
                 .then(result => {
                     if(result.data)
-                        res.status(result.status).json(format(result.data))
+                        res.status(result.status).json({
+                            status: result.status,
+                            result: result.result,
+                            message: result.message,
+                            data: format(result.data)
+                        })
                     else
                         res.status(result.status).json(result)
                 })

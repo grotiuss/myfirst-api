@@ -26,15 +26,15 @@ module.exports = {
     "dialect": "postgres"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
+    "use_env_variable": process.env.DATABASE_URL,
     "dialect": "postgres",
-    "operatorsAliases": false
-    // "protocol": 'postgres',
-    // "dialectOptions": {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false
-    //   }
-    // }
+    "operatorsAliases": false,
+    "protocol": 'postgres',
+    "dialectOptions": {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
   }
 };

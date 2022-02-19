@@ -6,6 +6,9 @@ const {
 //For password encryption
 const bcrypt = require('bcrypt')
 
+//for API Session
+const jwt = require('jsonwebtoken')
+
 module.exports = (sequelize, DataTypes) => {
   class User_account extends Model {
     /**
@@ -34,6 +37,48 @@ module.exports = (sequelize, DataTypes) => {
         QueryTypes: 'SELECT'
       })
       return datas
+    }
+
+    generateToken = () => {
+      const payload = {
+        id: this.id,
+        username: this.username,
+        asAdmin: this.asAdmin
+      }
+      const secret = process.env.JWT_SECRET || 'ankjdsnjkkjnfadnkjd'
+      const token = jwt.sign(payload, secret)
+      return token
+    }
+
+    static authenticate = async({ username, password }) => {
+      try {
+        const user = await this.findOne({ where: { username } })
+        if(!user)
+          return({
+            status: 202,
+            result: 'FAILED',
+            message: 'User not found'
+          })
+        const isPasswordValid = user.checkPassword(password)
+        if(!isPasswordValid)
+          return({
+            status: 202,
+            result: 'FAILED',
+            message: 'Wrong password!'
+          })
+        return({
+          status: 202,
+          result: 'SUCCESS',
+          message: 'Login success! :D',
+          data: user
+        })
+      } catch(error) {
+          return({
+            status: 500,
+            result: 'ERROR',
+            error: error
+          })
+      }
     }
 
   };

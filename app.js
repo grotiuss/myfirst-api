@@ -9,6 +9,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testDBRouter = require('./routes/testDB');
 
+var loginUser = require('./routes/login_user')
+
 var app = express();
 
 // === CORS ===
@@ -26,6 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/login', loginUser);
 app.use('/users', usersRouter);
 app.use('/test-db', testDBRouter);
 

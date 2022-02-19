@@ -8,14 +8,7 @@ module.exports = {
     "password": DB_PASSWORD,
     "database": DB_DATABASE,
     "host": DB_HOST,
-    "dialect": "postgres",
-    "protocol": 'postgres',
-    "dialectOptions": {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
+    "dialect": "postgres"
   },
 
   "test": {

@@ -32,10 +32,11 @@ module.exports = (sequelize, DataTypes) => {
     checkPassword = (password) => bcrypt.compareSync(password, this.password)
 
     static findAllUsers = async() => {
-      // const [result, metadata] = await sequelize.query("SELECT * from `User_accounts`;")
-      const [result, metadata] =  await sequelize.query('SELECT * FROM "User_accounts";')
-      return metadata
-
+      // const [result, metadata] =  await sequelize.query('SELECT * FROM "User_accounts";')
+      const [datas, result1] = await sequelize.query('SELECT * FROM "User_accounts";', {
+        QueryTypes: 'SELECT'
+      })
+      return datas
     }
 
   };

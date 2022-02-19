@@ -26,17 +26,14 @@ module.exports = {
     "dialect": "postgres"
   },
   "production": {
-    "username": process.env.PG_USER,
-    "password": process.env.PG_PASSWORD,
-    "database": process.env.PG_DATABASE,
-    "host": process.env.PG_HOST,
+    "use_env_variable": process.env.DATABASE_URL,
     "dialect": "postgres",
-    "protocol": 'postgres',
-    "dialectOptions": {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
+    // "protocol": 'postgres',
+    // "dialectOptions": {
+    //   ssl: {
+    //     require: true,
+    //     rejectUnauthorized: false
+    //   }
+    // }
   }
 };

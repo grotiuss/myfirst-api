@@ -16,7 +16,7 @@ module.exports = {
     },
     findAllAccounts: async(req, res) => {
         try {
-            const datas = await User_account.findAll()
+            const datas = await User_account.findAllUsers()
 
             res.status(200).json({
                 status: 200,

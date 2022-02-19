@@ -31,10 +31,10 @@ module.exports = {
             password: req.body.password
         }
         if (input.username.length == 0 || input.password.length == 0)
-            res.status(205).json({
-                status: 205,
+            res.status(202).json({
+                status: 202,
                 result: 'FAILED',
-                message: 'Please fullfill all of the form data!'
+                message: 'Please fulfill all of the form data!'
             })
         else {
             await User_account.authenticate(input)

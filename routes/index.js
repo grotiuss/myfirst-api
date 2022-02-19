@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('ladida')
+  console.log('DATABASE_URL:' + (process.env.DATABASE_URL || 'ladida'))
   res.render('index', { title: 'Express' });
 });
 

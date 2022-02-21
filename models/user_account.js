@@ -67,9 +67,9 @@ module.exports = (sequelize, DataTypes) => {
             message: 'Wrong password!'
           })
         return({
-          status: 202,
+          status: 200,
           result: 'SUCCESS',
-          message: 'Login success! :D',
+          message: 'Login successfully! :D',
           data: user
         })
       } catch(error) {

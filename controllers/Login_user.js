@@ -20,10 +20,17 @@ const format = (user) => {
 
 module.exports = {
     index: (req, res) => {
-        res.status(200).json({
-            status: 200,
-            message: 'Welcome to Login_user Section! :D'
-        })
+        try {
+            res.status(200).json({
+                status: 200,
+                message: 'Welcome to Login_user Section! :D'
+            })
+        } catch (error) {
+            res.status(500).json({
+                status: 500,
+                message: error
+            })
+        }
     },
     login_post: async (req, res) => {
         const input = {

@@ -3,7 +3,7 @@
   "info": {
     "description": "This is a simple game that was called Rock Paper Scissors. \n\nYou can get the code repository on https://github.com/grotiuss/myfirst-api",
     "version": "1.0.0",
-    "title": "Rock Paper Scissors"
+    "title": "My First API"
   },
   "host": "myfirst-api-101.herokuapp.com",
   "tags": [

@@ -11,5 +11,10 @@ router.get('/test-commit', function(req,res,next) {
   console.log('Goyangg');
   res.send('Goyangggg!!!')
 })
+router.get('/test-committ', function(req, res, next) {
+  console.log("GOYANG LAGI!!");
+  res.send("LANJUT GOYANG!!");
+})
+
 
 module.exports = router;

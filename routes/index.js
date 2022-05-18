@@ -7,4 +7,9 @@ router.get('/', function(req, res, next) {
   res.redirect('/docs')
 });
 
+router.get('/test-commit', function(req,res,next) {
+  console.log('Goyangg');
+  res.send('Goyangggg!!!')
+})
+
 module.exports = router;
